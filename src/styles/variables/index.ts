@@ -6,6 +6,9 @@ export const colors = {
   blu: '#1DA1F3',
   blu_dark: '#13669A',
   blu_light: '#72C9FF',
+  pink: '#FF7477',
+  yellow: '#FFC316',
+  green: '#21D19F',
 
   red: '#F03847',
   red_dark: '#7A1921',

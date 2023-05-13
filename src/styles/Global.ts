@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { colors } from "./variables";
+import { colors, font } from "./variables";
 
 export const GlobalStyled = createGlobalStyle`
   *{
@@ -11,7 +11,12 @@ export const GlobalStyled = createGlobalStyle`
   body {
     background-color: ${colors.gray1};
 
-    font-family: 'Roboto', sans-serif;
-    color: ${colors.gray7}
+    font-family: ${font.default};
+    color: ${colors.gray7};
+    line-height: 160%;
+  }
+
+  button {
+    cursor: pointer;
   }
 `
