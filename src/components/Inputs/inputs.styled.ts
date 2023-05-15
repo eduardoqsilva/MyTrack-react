@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { colors } from "../../styles/variables";
 
+export const FormStyled = styled.form`
+  width: 100%;
+  max-width: 500px;
+`
+
 export const WrapperInput = styled.div`
   width: 100%;
   height: 56px;
