@@ -24,7 +24,7 @@ export function InputSearch() {
           placeholder="Ex: NL847547040BR"
           onChange={(e) => setValue(e.currentTarget.value)}
         />
-        <button>
+        <button type="submit">
           <MagnifyingGlass size={22} color={colors.white}/>
         </button>
       </WrapperInput>
