@@ -5,12 +5,15 @@ import { TrackContantWrapper } from "./tracks.styled";
 
 export function Tracks() {
   return (
-    <TrackContantWrapper>
-      <div className="input">
-        <h3>Rastrear Encomendas:</h3>
-        <InputSearch />
-      </div>
-      <Saveds />
-    </TrackContantWrapper>
+    <>
+      <TrackContantWrapper>
+        <div className="input">
+          <h3>Rastrear Encomendas:</h3>
+          <InputSearch />
+        </div>
+        <Saveds />
+      </TrackContantWrapper>
+    </>
+
   )
 }
