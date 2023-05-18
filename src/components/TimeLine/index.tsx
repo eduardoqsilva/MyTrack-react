@@ -10,11 +10,11 @@ interface TimeLine {
 
 export function TimeLine({ events }: TimeLine) {
 
-  useEffect(() => { 
+  useEffect(() => {
     // console.log(events?.reverse())
-  },[events])
+  }, [events])
 
-  function formatDate(dateString:string) {
+  function formatDate(dateString: string) {
     const dateObj = new Date(dateString);
     const day = dateObj.getDate().toString().padStart(2, '0');
     const month = (dateObj.getMonth() + 1).toString().padStart(2, '0');
@@ -23,26 +23,28 @@ export function TimeLine({ events }: TimeLine) {
     const minute = dateObj.getMinutes().toString().padStart(2, '0');
     return `${day}/${month}/${year} • ${hour}:${minute}`;
   }
-  
+
 
   return (
     <ContantContainer>
-      {events ? events.map((item, index) =>{
+      {events ? events.map((item, index) => {
         return (
           <TimeLineWrapperCard key={index}>
             <h3 className="title">{item.events}</h3>
             <div className="locate">
               <MapPin size={20} color={colors.blu} />
               <p>
-                {item.local} {` - ${item.city ? item.city + '/' : ''}${item.uf ? item.uf : ''}`} <br />
+                {item.local} {`${item.city ? ' - ' + item.city + '/' : ''}${item.uf ? item.uf : ''}`} <br />
                 {item.destination_local ? `Destino: ${item.destination_local}` : ''}
-                {item.destination_city ? ` - ${item.destination_city}`: ''}
+                {item.destination_city ? ` - ${item.destination_city}` : ''}
               </p>
             </div>
             <span className="date">{formatDate(item.date)}</span>
           </TimeLineWrapperCard>
         )
-      }).reverse() : ''}
+      }).reverse() :
+        <h2>Código de rastreio não compatível com MyTracker</h2>
+      }
     </ContantContainer>
   )
 }

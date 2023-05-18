@@ -4,7 +4,7 @@ import { colors } from "../../styles/variables";
 export const ContantContainer = styled.div`
   max-width: 700px;
   border-left: 3px dashed ${colors.blu};
-  padding: 2rem;
+  padding: 2rem 0 2rem 2rem;
   
   display: flex;
   flex-direction: column;
@@ -68,7 +68,26 @@ export const TimeLineWrapperCard = styled.div`
     
     position: absolute;
     top: 1.5rem;
-    left: -20px;
+    left: -19px;
     z-index: 11;    
+  }
+
+  @media (max-width: 700px) {
+    padding: 0.8rem 0.8rem 0.8rem 1.2rem;
+
+    & svg {
+      width: 16px;
+      /* align-self: self-start; */
+    }
+    & .locate {
+      align-items: start;
+
+      & p {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        color: ${colors.gray4}
+      }
+    }
   }
 `
