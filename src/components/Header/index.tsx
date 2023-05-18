@@ -1,7 +1,7 @@
 import { BookmarkSimple } from "@phosphor-icons/react";
 import { FormOverlay, HeaderContainer, InputRatio, OverlayWrapper, WrapperRatio } from "./header.styled";
 import { colors } from "../../styles/variables";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 
 interface HeaderType {
@@ -14,6 +14,17 @@ export function Header({ cod, transport }: HeaderType) {
   const [category, setCategory] = useState('')
   const [title, setTitle] = useState('')
   const [show, setShow] = useState(false)
+
+  useEffect(() => {
+    if(show) {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 20)
+      document.body.style.overflowY = 'hidden'
+    }else {
+      document.body.style.overflowY = ''
+    }
+  }, [show])
 
   function handleOnSubmit(e: FormEvent) {
     e.preventDefault();
