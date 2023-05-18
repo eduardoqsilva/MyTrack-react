@@ -10,10 +10,9 @@ export function ButtonShare() {
   function share() {
     if (navigator.share !== undefined) {
       navigator.share({
-        title: 'My Tracks',
+        title: 'My Tracks\n',
         text: 'Veja o rastreio da encomenda!',
         url: location.search,
-
       })
         .then(() => console.log('Successful share: ' + location.search))
         .catch((error) => console.log('Error sharing', error));
