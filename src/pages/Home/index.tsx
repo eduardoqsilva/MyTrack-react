@@ -4,6 +4,7 @@ import { UseFetching } from "../../services/api/useFetch";
 import { ContainerHome } from "./home.styled";
 import { useParams } from "react-router-dom";
 import { Header } from "../../components/Header";
+import { ButtonShare } from "../../components/ShareButton";
 
 
 export function Home() {
@@ -19,6 +20,7 @@ export function Home() {
         <Header cod={num.cod} transport={data?.data?.company?.name} />
         <TimeLine events={data?.data.events} />
       </ContainerHome>
+      <ButtonShare />
     </>
   )
 }
