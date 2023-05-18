@@ -14,6 +14,7 @@ export const GlobalStyled = createGlobalStyle`
     font-family: ${font.default};
     color: ${colors.gray7};
     line-height: 160%;
+    overflow-x: hidden;
   }
 
   button {
