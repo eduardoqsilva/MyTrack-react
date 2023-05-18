@@ -28,6 +28,7 @@ export const CardWrapper = styled.div<TypeCard>`
     font-size: 1rem;
     font-weight: 500;
     color: ${colors.gray7};
+    cursor: pointer;
   }
 
   & button {
@@ -96,6 +97,7 @@ export const IconWrapper = styled.div<TypeCard>`
     }
   }};
   width: 46px;
+  min-width: 46px;
   height: 46px;
   border-radius: 8px;
   
