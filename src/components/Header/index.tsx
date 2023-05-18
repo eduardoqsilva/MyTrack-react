@@ -75,7 +75,7 @@ export function Header({ cod, transport }: HeaderType) {
             />
           </button>
         </div>
-        <span>{'NL549242085BR'}</span>
+        <span>{cod}</span>
       </HeaderContainer>
 
       <OverlayWrapper $show={show}>
