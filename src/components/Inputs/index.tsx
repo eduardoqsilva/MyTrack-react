@@ -12,7 +12,7 @@ export function InputSearch() {
   function HandleOnSubmit(e:FormEvent) {
     e.preventDefault()
     if(value.length >= 10 ) {
-      navigate(`/home/${value}`)
+      navigate(`/track/${value}`)
     }
   }
 
