@@ -2,6 +2,7 @@ import { BookmarkSimple } from "@phosphor-icons/react";
 import { FormOverlay, HeaderContainer, InputRatio, OverlayWrapper, WrapperRatio } from "./header.styled";
 import { colors } from "../../styles/variables";
 import { FormEvent, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 interface HeaderType {
@@ -14,6 +15,7 @@ export function Header({ cod, transport }: HeaderType) {
   const [category, setCategory] = useState('')
   const [title, setTitle] = useState('')
   const [show, setShow] = useState(false)
+  const Navigate = useNavigate()
 
   useEffect(() => {
     if(show) {
@@ -48,6 +50,7 @@ export function Header({ cod, transport }: HeaderType) {
           },
         ])
       );
+      Navigate('/')
     } else {
       localStorage.setItem(
         'saved',
@@ -59,6 +62,7 @@ export function Header({ cod, transport }: HeaderType) {
           },
         ])
       );
+      Navigate('/')
     }
 
   }
@@ -93,25 +97,25 @@ export function Header({ cod, transport }: HeaderType) {
               name="select"
               value={'tecnologia'}
               required
-              onChange={(e) => setCategory(e.currentTarget.value)}
+              onChange={(e:React.ChangeEvent<HTMLInputElement>) => setCategory(e.currentTarget.value)}
             />
             <InputRatio
               name="select"
               value={'roupas'}
               required
-              onChange={(e) => setCategory(e.currentTarget.value)}
+              onChange={(e:React.ChangeEvent<HTMLInputElement>) => setCategory(e.currentTarget.value)}
             />
             <InputRatio
               name="select"
               value={'comida'}
               required
-              onChange={(e) => setCategory(e.currentTarget.value)}
+              onChange={(e:React.ChangeEvent<HTMLInputElement>) => setCategory(e.currentTarget.value)}
             />
             <InputRatio
               name="select"
               value={'geral'}
               required
-              onChange={(e) => setCategory(e.currentTarget.value)}
+              onChange={(e:React.ChangeEvent<HTMLInputElement>) => setCategory(e.currentTarget.value)}
             />
           </WrapperRatio>
           <button type="submit">Salvar Encomenda</button>
