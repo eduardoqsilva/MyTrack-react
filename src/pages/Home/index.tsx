@@ -1,26 +1,33 @@
+import { useEffect, useState } from "react";
+import { InputSearch } from "../../components/Inputs";
 import { Loading } from "../../components/Loading";
-import { TimeLine } from "../../components/TimeLine";
-import { UseFetching } from "../../services/api/useFetch";
-import { ContainerHome } from "./home.styled";
-import { useParams } from "react-router-dom";
-import { Header } from "../../components/Header";
-import { ButtonShare } from "../../components/ShareButton";
+import { Saveds } from "../../components/Saveds";
+import { TrackContantWrapper } from "./tracks.styled";
 
 
 export function Home() {
 
-  const num = useParams()
-  const { data, isFetching } = UseFetching(num.cod)
+  const [load, setLoad] = useState(true)
 
+  useEffect(() => {
+    const time = setTimeout(() => {
+      setLoad(false)
+    }, 1500)
+
+    return () => clearTimeout(time)
+  },[])
 
   return (
     <>
-      <Loading load={isFetching} />
-      <ContainerHome>
-        <Header cod={num.cod} transport={data?.data?.company?.name} />
-        <TimeLine events={data?.data.events} />
-      </ContainerHome>
-      <ButtonShare />
+      <TrackContantWrapper>
+        <div className="input">
+          <h3>Rastrear Encomendas:</h3>
+          <InputSearch />
+        </div>
+        <Saveds />
+      </TrackContantWrapper>
+      <Loading load={load}/>
     </>
+
   )
 }
