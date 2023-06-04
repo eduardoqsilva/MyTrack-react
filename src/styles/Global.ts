@@ -20,4 +20,10 @@ export const GlobalStyled = createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    color: ${colors.blu_dark}
+  }
 `
