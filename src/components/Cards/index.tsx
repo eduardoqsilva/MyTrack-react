@@ -10,7 +10,7 @@ interface CardType {
   cod: string
   index: number
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  data: [object[], (value:any) => void]
+  data: [object[], (value: any) => void]
 }
 export function Card({ tag, text, cod, index, data }: CardType) {
 
@@ -51,7 +51,7 @@ export function Card({ tag, text, cod, index, data }: CardType) {
           {icon()}
         </IconContext.Provider>
       </IconWrapper>
-      <p onClick={() => navigator(`/home/${cod}`)}>
+      <p onClick={() => navigator(`/track/${cod}`)}>
         {text}
       </p>
       <button onClick={handleOnClick}>
