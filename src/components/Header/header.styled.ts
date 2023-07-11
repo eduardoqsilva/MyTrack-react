@@ -28,8 +28,11 @@ export const HeaderContainer = styled.div`
       border: none;
       transition: all .1s ease-in;
 
-      & :active {
+      &:not(:disabled):active {
         transform: scale(0.95);
+      }
+      &:disabled {
+        cursor: not-allowed;
       }
     }
   }

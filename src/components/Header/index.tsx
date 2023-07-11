@@ -9,13 +9,18 @@ interface HeaderType {
   cod: string | undefined
   transport: string | undefined
 }
+interface Item {
+  cod: string;
+}
 
 export function Header({ cod, transport }: HeaderType) {
 
   const [category, setCategory] = useState('')
   const [title, setTitle] = useState('')
   const [show, setShow] = useState(false)
+  const [saved, setSaved] = useState(false)
   const Navigate = useNavigate()
+
 
   useEffect(() => {
     if(show) {
@@ -67,15 +72,26 @@ export function Header({ cod, transport }: HeaderType) {
 
   }
 
+  useEffect(() => {
+    const valueText = localStorage.getItem('saved')
+
+    if(valueText) {
+      const SavedItems:Item[] = JSON.parse(valueText)
+      const saves = SavedItems.filter(item => item.cod === cod)
+      setSaved(saves.length > 0)
+    }
+  }, [cod])
+
   return (
     <>
       <HeaderContainer>
         <div className="container">
           <h1>Rastreio {transport}</h1>
-          <button onClick={() => setShow(true)}>
+          <button onClick={() => setShow(true)} disabled={saved} >
             <BookmarkSimple
               size={32}
               color={colors.blu}
+              weight={saved ? 'fill' : 'regular'}
             />
           </button>
         </div>
