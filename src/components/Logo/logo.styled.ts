@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 interface LogoWrapperProps {
   route: boolean
@@ -19,5 +19,9 @@ export const LogoWrapper = styled.div<LogoWrapperProps>`
 
   .backToHome {
     display: ${props => props.route ? 'block' : 'none'};
+  }
+
+  @media (max-width: 700px) {
+    ${props => props.route ? css`justify-content: space-between;` : css`justify-content: center;` }
   }
 `
