@@ -1,12 +1,23 @@
 import styled from "styled-components";
 
-export const LogoWrapper = styled.div`
-  position: absolute;
-  left: 1.5rem;
-  top: 1rem;
+interface LogoWrapperProps {
+  route: boolean
+}
 
-  @media (max-width: 700px) {
-    left: 50%;
-    transform: translateX(-50%);
+export const LogoWrapper = styled.div<LogoWrapperProps>`
+  position: absolute;
+  left: 50%;
+  top: 1rem;
+  transform: translateX(-50%);
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+
+  .backToHome {
+    display: ${props => props.route ? 'block' : 'none'};
   }
 `
