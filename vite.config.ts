@@ -5,7 +5,7 @@ import { VitePWA, VitePWAOptions } from "vite-plugin-pwa"
 
 const manifestForPlugIn: Partial<VitePWAOptions> = {
   registerType:'prompt',
-  includeAssets:['favicon.ico', "apple-touc-icon.png", "masked-icon.svg"],
+  includeAssets:['favicon.ico', "apple-touc-icon.png", "masked-icon.svg", '**/*.svg'],
   manifest:{
     name:"My Tracks",
     short_name:"MyTracks",
